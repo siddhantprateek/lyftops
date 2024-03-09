@@ -3,13 +3,15 @@ name: Kubeconform - Kubernetes manifests validation
 on: [push, pull_request]
 
 jobs:
- validation:
+  kubeconform:
+    
     runs-on: ubuntu-latest
+    container: deck15/kubeval-tools:latest
+    
     steps:
-      - uses: actions/checkout@v2
-      - name: validate manifests in kubernetes directory
-        uses: andloh/actions-k8s-manifests-validate-kubeval@1.0.6
-        with:
-          files: kubernetes
-          token: ${{ secrets.GITHUB_TOKEN }}
-          ignored_filename_patterns: .github/workflows/*
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Run Kubeconform
+        run: |
+          kubeconform -summary $GITHUB_WORKSPACE/kubernetes/
