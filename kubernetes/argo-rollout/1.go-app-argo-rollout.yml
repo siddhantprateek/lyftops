@@ -28,10 +28,14 @@ spec:
       containers:
       - name: go-app-rollouts
         image: siddhantprateek/go-app:v4
+        env:
+        - name: PORT
+          value: 4000
         ports:
         - name: http
           containerPort: 4000
           protocol: TCP
+        
         resources:
           requests:
             memory: 32Mi
