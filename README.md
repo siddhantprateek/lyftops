@@ -1,6 +1,6 @@
 # LYFTOPS
 
-The aim of this project is to understand the GitOps best practices, utilizing Argo CD for continuous deployment and Argo Rollouts for advanced deployment strategies within a Kubernetes environment. You will be responsible for setting up a GitOps pipeline that automates the deployment and management of a simple web application.
+The aim of this project is to understand the GitOps best practices, utilizing Argo CD for continuous deployment and Argo Rollouts for advanced deployment strategies within a Kubernetes environment. I'm responsible for setting up a GitOps pipeline that automates the deployment and management of a simple web application.
 
 ## Tech Stack
 
