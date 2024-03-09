@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: app-deployment
+  name: app-deployment
+  namespace: go-app-ns
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: app-deployment
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: app-deployment
+    spec:
+      containers:
+      - image: siddhantprateek/go-app
+        name: go-app
+        envFrom:
+        - configMapRef:
+            name: app-config
+        ports:
+        - containerPort: 4000
+        resources: {}
+status: {}
