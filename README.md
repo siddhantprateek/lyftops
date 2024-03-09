@@ -23,6 +23,7 @@ Few things to note:
 > - `/kubernetes` contains the kubernetes manifest files for the Go application. It contains (Deployment, Service & ConfigMap)
 > - `/kubernetes/argo-rollout` contains the Rollout for Go application. Plus Instruction to step Argo Rollout in Kubernetes cluster.
 > There are 4 versions of docker image on docker hub. `go-app:latest`, `go-app:v2`, `go-app:v3`, `go-app:v4`.
+> In ArgoCD, there are 2 application created, `go-application`(Yellow) and `go-app-argo-rollouts`(Green)
 
 - `Docker Image` is located at - https://hub.docker.com/r/siddhantprateek/go-app
 ---
