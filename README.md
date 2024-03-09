@@ -4,14 +4,14 @@ The aim of this project is to understand the GitOps best practices, utilizing Ar
 
 ## Tech Stack
 
-- `Kubernetes`
+- `Kubernetes` - Container Orchestration Tool
 - `ArgoCD`
 - `Argo Rollout`
 - `Go`
-- `Labstack - Echo`
-- `Github Actions`
-- `Docker`
-- `Terraform`
+- `Labstack - Echo` - Go web framework used for building the API server.
+- `Github Actions` for CI/CD pipeline
+- `Docker` - Container
+- `Terraform` - Infrastructure provisioning tool
 
 ## Application Workflow
 
@@ -94,11 +94,15 @@ OpenTofu will perform the following actions:
 
 Plan: 1 to add, 0 to change, 0 to destroy.
 ```
+
 - To Spin up the Kubernetes  Cluster on Linode LKE, run
 
 ```bash
 tofu apply # Create or update infrastructure
 ```
+
+![](./assets/linode-lks.png)
+
 - To Access  your cluster via `kubectl`, go through /scripts, need to provide kubeconfig.yaml configuration.
 
 - After forming the infrastructure
@@ -135,6 +139,21 @@ kubectl apply -f ./kubernetes/argo-rollout/
 ```bash
  kubectl argo rollouts set image go-app-rollouts go-app-rollouts=siddhantprateek/go-app:<CHANGE_THE_LABEL> -n go-app-ns 
 ```
+
+## Results
+
+- Through Argo Rollout performing canary deployment strategy. Argo Rollouts monitoring the deployment of the new version, ensuring the canary release successfully completes.
+![](./assets/argo-rollouts.png)
+
+- Canary Deployment view.
+
+![](./assets/revision1-2.png)
+
+![](./assets/revision2.png)
+
+
+- Simple Deployment on ArgoCD
+![](./assets/argo-monitor-simple-resource.png)
 
 
 
