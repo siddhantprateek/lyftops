@@ -1,0 +1,17 @@
+version: '3.9'
+
+services:
+  app:
+    build:
+      context: ./app
+      dockerfile: Dockerfile
+    environment:
+      PORT: 8082
+    ports:
+      - 8082:8082
+    networks:
+      - lyft-networks
+
+
+networks:
+  lyft-networks:
