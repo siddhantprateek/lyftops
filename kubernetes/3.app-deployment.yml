@@ -19,7 +19,7 @@ spec:
         app: app-deployment
     spec:
       containers:
-      - image: siddhantprateek/go-app
+      - image: siddhantprateek/go-app:v3
         name: go-app
         envFrom:
         - configMapRef:
