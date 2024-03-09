@@ -140,6 +140,11 @@ kubectl apply -f ./kubernetes/argo-rollout/
  kubectl argo rollouts set image go-app-rollouts go-app-rollouts=siddhantprateek/go-app:<CHANGE_THE_LABEL> -n go-app-ns 
 ```
 
+- After everything is done
+```bash
+tofu destroy # Destroy previously created infrastructure
+```
+
 ## Results
 
 - Through Argo Rollout performing canary deployment strategy. Argo Rollouts monitoring the deployment of the new version, ensuring the canary release successfully completes.
@@ -156,6 +161,9 @@ kubectl apply -f ./kubernetes/argo-rollout/
 ![](./assets/argo-monitor-simple-resource.png)
 
 
+## Challenges 
+
+There have been relatively few issues encountered. If the task had been to use 'kubectl rollout', it could have been difficult, however ArgoCD made it easier as it allows rollout/rollback control. Plus features like Automate Synchronisation allow you to set alternative deployment strategies that are appropriate for the application.
 
 ### Author
 
