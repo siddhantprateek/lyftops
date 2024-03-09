@@ -19,6 +19,8 @@ kubectl create namespace argocd
 kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml
 ```
 
+- `Docker Image` - https://hub.docker.com/r/siddhantprateek/go-app
+
 ### Author
 
 [Siddhant Prateek Mahanayak](https://github.com/siddhantprateek)
