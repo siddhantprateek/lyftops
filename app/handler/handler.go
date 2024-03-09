@@ -8,12 +8,12 @@ import (
 
 func Init(c echo.Context) error {
 	return c.JSON(http.StatusOK, echo.Map{
-		"message": "Welcome to GoDep Echo Server",
+		"message": "Welcome to GoDep Echo Server v4",
 	})
 }
 
 func Health(c echo.Context) error {
 	return c.JSON(http.StatusOK, echo.Map{
-		"message": "Working route",
+		"message": "version 4 working route",
 	})
 }

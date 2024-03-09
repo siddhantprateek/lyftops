@@ -1,14 +1,20 @@
 version: '3.9'
 
 services:
-  app:
-    build:
-      context: ./app
-      dockerfile: Dockerfile
+  appv2:
+    image: siddhantprateek/go-app:v2
     environment:
-      PORT: 8082
+      PORT: 8001
     ports:
-      - 8082:8082
+      - 8001:8001
+    networks:
+      - lyft-networks
+  appv3:
+    image: siddhantprateek/go-app:v3
+    environment:
+      PORT: 8002
+    ports:
+      - 8002:8002
     networks:
       - lyft-networks
 
