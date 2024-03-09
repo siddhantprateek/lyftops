@@ -28,9 +28,9 @@ spec:
       containers:
       - name: go-app-rollouts
         image: siddhantprateek/go-app:v4
-        env:
-        - name: PORT
-          value: 4000
+        envFrom:
+        - configMapRef:
+            name: app-config
         ports:
         - name: http
           containerPort: 4000
