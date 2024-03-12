@@ -27,7 +27,7 @@ spec:
     spec:
       containers:
       - name: go-app-rollouts
-        image: siddhantprateek/go-app:v4
+        image: siddhantprateek/go-app:v3
         envFrom:
         - configMapRef:
             name: app-config
